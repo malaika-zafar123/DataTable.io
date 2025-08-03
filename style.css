@@ -61,7 +61,7 @@ margin-bottom: -5%;
   padding: 15px;
   text-align: center;
   border: 1px solid #ddd;
-  font-size: 16px;
+  font-size: 16px; 
 }
 
 .custom-table tbody tr:nth-child(even) {
