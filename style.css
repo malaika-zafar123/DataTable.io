@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient( #f8edeb);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+.custom-table-container {
+  margin: 40px 6%;
+}
+
+.custom-table-container h2 {
+  color: #006d77;
+  font-size: 40px;
+margin-bottom: -5%;
+}
+
+.addbtn button {
+  background-color: #83c5be !important;
+  color: white !important;
+  margin-left: 80% !important;
+  padding: 10px;
+  margin: 20px;
+  border: none;
+  font-size: 20px;
+  border-radius: 1px solid #fff !important;
+}
+
+.addbtn button:hover {
+  background-color: #006d77 !important;
+  color: #fff !important;
+  transform: scale(1.05);
+}
+
+.table-heading {
+  text-align: center;
+  color: #006d77;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px #fff;
+}
+
+.custom-table {
+  width: 100%;
+  border: 1px solid;
+  border-collapse: collapse;
+  overflow: hidden;
+  /* border-radius: 12px; */
+}
+
+.custom-table thead {
+  background-color: #006d77;
+  color: white;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #e0eef3;
+}
+
+.custom-table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
