@@ -49,8 +49,6 @@ margin-bottom: -5%;
   width: 100%;
   border: 1px solid;
   border-collapse: collapse;
-  overflow: hidden;
-  /* border-radius: 12px; */
 }
 
 .custom-table thead {
