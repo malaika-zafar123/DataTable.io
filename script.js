@@ -16,8 +16,9 @@ fetch('https://dummyjson.com/products')
 
       const finalPrice = (product.price - (product.price * product.discountPercentage / 100)).toFixed(2);
 
-      table.innerHTML += `
-        <tr>
+      const table_row = document.createElement("tr")
+      table_row.innerHTML = `
+      
           <td>${product.id}</td>
           <td>${product.title}</td>
           <td>$${product.price}</td>
@@ -25,9 +26,14 @@ fetch('https://dummyjson.com/products')
           <td>$${finalPrice}</td>
           <td>${generateStars(product.rating)}</td>
           <td>${product.brand}</td>
-          <td><img src="${product.thumbnail}" width="60" height="60"></td>
+          <td><img src="${product.thumbnail}" width=" 60" height="60"></td>
           <td>${shortDescription}</td>
-        </tr>`;
+        `;
+      table_row.addEventListener("click",
+        () => {
+          window.location.href = `singleproduct.html?id=${product.id}`;
+        });
+      table.appendChild(table_row);
     });
   })
   .catch(error => {

@@ -5,7 +5,7 @@
 }
 
 body {
-  background: linear-gradient( #f8edeb);
+  background-color:#fdfcfc;
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -70,4 +70,11 @@ margin-bottom: -5%;
 
 .custom-table tbody tr:nth-child(odd) {
   background-color: #ffffff;
+}
+.btn{
+  background-color: #006d77 !important ;
+  color: #fff !important;
+}
+.btn:hover{
+  background-color: #588d88 !important;
 }

@@ -1,0 +1,138 @@
+<!-- Save as singleproduct.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Single Product</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #fdfcfc;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .btn {
+      background-color: #006d77 !important;
+      color: #fff !important;
+    }
+
+    h2 {
+      text-align: center;
+      background-color: #006d77;
+      color: #fdfcfc;
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    h4, strong {
+      color: #006d77;
+    }
+
+    .text-center {
+      margin-bottom: 30px;
+    }
+
+    .btn2 {
+      margin: 20px 43%;
+      padding: 10px 10px;
+      background-color: #006d77;
+      border: none;
+      border-radius: 5px !important;
+    }
+    .btn2 a{
+      text-decoration: none;
+      color: #fdfcfc !important;
+    }
+
+    .col-md-5 {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 10px;
+    }
+
+    .product-container {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    #mainImage {
+      max-width: 100%;
+      width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+    }
+
+    #thumbnail {
+      width: 40%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="product-container">
+      <h2 id="title"></h2>
+
+      <p class="text-muted text-center" id="brand"></p>
+      <p id="description" class="text-center"></p>
+
+      <div class="text-center mb-3">
+        <img id="mainImage" class="img-fluid rounded mb-3" alt="Product Image" />
+        <br />
+        <img id="thumbnail" class="img-thumbnail mt-2" alt="Thumbnail" />
+      </div>
+
+      <div class="text-center">
+        <h4 id="price" class="text-danger"></h4>
+        <p>
+          <small id="discount" class="text-muted text-decoration-line-through"></small>
+          <strong id="finalPrice"></strong>
+        </p>
+        <p><strong>Stock:</strong> <span id="stock">Available</span></p>
+        <p><strong>Rating:</strong> <span id="rating">4.5</span></p>
+        <p><strong>Warranty:</strong> 6 months</p>
+        <p><strong>Shipping:</strong> Free delivery</p>
+        <p><strong>Return Policy:</strong> 7-day return</p>
+
+        <br>
+        <!-- QR Code -->
+        <img src="https://cdn.dummyjson.com/public/qr-code.png" alt="QR Code" width="100" class="mt-3" />
+        <br>
+        <button class="btn mt-3">Add to Cart</button>
+      </div>
+    </div>
+    
+    <!-- Customer Reviews -->
+    <div class="row justify-content-around mt-5 mb-5 text-center">
+      <h4 class="text-center w-100">Customer Reviews</h4>
+
+      <div class="col-md-5 mb-3">
+        <p><strong>Eleanor Collins</strong> ⭐⭐⭐</p>
+        <p>"Would not recommend!"</p>
+        <p><strong>Email:</strong> eleanor.collins@x.dummyjson.com</p>
+      </div>
+      
+      <div class="col-md-5 mb-3">
+        <p><strong>Lucas Gordon</strong> ⭐⭐⭐⭐</p>
+        <p>"Very satisfied!"</p>
+        <p><strong>Email:</strong> lucas.gordon@x.dummyjson.com</p>
+      </div>
+      
+      <div class="col-md-5 mb-3">
+        <p><strong>Scarlett Wright</strong> ⭐⭐⭐⭐⭐</p>
+        <p>"Highly impressed!"</p>
+        <p><strong>Email:</strong> scarlett.wright@x.dummyjson.com</p>
+      </div>
+    </div>
+    <button class="btn2 ">
+      <a href="index.html">Back to Table</a>
+    </button>
+  </div>
+
+  <script src="singleproduct.js"></script>
+</body>
+</html>
