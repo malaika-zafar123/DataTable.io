@@ -11,7 +11,7 @@ body {
 
 
 .custom-table-container {
-  margin: 40px 6%;
+  margin: 30px 0;
 }
 
 .custom-table-container h2 {
@@ -77,4 +77,11 @@ margin-bottom: -5%;
 }
 .btn:hover{
   background-color: #588d88 !important;
+}
+.container-fluid{
+margin-top: 1%;
+}
+ .d-flex .form-control:focus{
+ outline: none;
+ box-shadow: none;
 }
