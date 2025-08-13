@@ -1,42 +1,60 @@
 const table = document.getElementById('userTableBody');
+const searchInput = document.querySelector('#searchProduct input');
+let allProducts = [];
+
 
 function generateStars(rating) {
   const fullStars = Math.floor(rating);
   return "⭐".repeat(fullStars);
 }
 
+
 fetch('https://dummyjson.com/products')
   .then(response => response.json())
   .then(data => {
-    const products = data.products;
-
-    products.forEach(product => {
-      const shortDescription = product.description.length > 50
-        ? product.description.slice(0, 50) + "..." : product.description;
-
-      const finalPrice = (product.price - (product.price * product.discountPercentage / 100)).toFixed(2);
-
-      const table_row = document.createElement("tr")
-      table_row.innerHTML = `
-      
-          <td>${product.id}</td>
-          <td>${product.title}</td>
-          <td>$${product.price}</td>
-          <td>${product.discountPercentage}%</td>
-          <td>$${finalPrice}</td>
-          <td>${generateStars(product.rating)}</td>
-          <td>${product.brand}</td>
-          <td><img src="${product.thumbnail}" width=" 60" height="60"></td>
-          <td>${shortDescription}</td>
-        `;
-      table_row.addEventListener("click",
-        () => {
-          window.location.href = `singleproduct.html?id=${product.id}`;
-        });
-      table.appendChild(table_row);
-    });
+    allProducts = data.products;
+    Table(allProducts);
   })
   .catch(error => {
     console.error("Error fetching data:", error);
   });
 
+
+function Table(products) {
+  table.innerHTML = "";
+
+
+
+   products.forEach(product => {
+    const shortDescription = product.description.length > 50
+      ? product.description.slice(0, 50) + "..." : product.description;
+
+    const finalPrice = (product.price - (product.price * product.discountPercentage / 100)).toFixed(2);
+
+    const table_row = document.createElement("tr");
+    table_row.innerHTML = `
+      <td>${product.id}</td>
+      <td>${product.title}</td>
+      <td>$${product.price}</td>
+      <td>${product.discountPercentage}%</td>
+      <td>$${finalPrice}</td>
+      <td>${generateStars(product.rating)}</td>
+      <td>${product.brand}</td>
+      <td><img src="${product.thumbnail}" width="60" height="60"></td>
+      <td>${shortDescription}</td>
+    `;
+    table_row.addEventListener("click", () => {
+      window.location.href = `singleproduct.html?id=${product.id}`;
+    });
+    table.appendChild(table_row);
+  });
+}
+
+// Search function
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
+  const filteredProducts = allProducts.filter(product =>
+    product.title.toLowerCase().includes(query)
+  );
+    Table(filteredProducts); 
+});
