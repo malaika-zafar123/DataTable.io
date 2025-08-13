@@ -11,16 +11,19 @@ body {
 
 
 .custom-table-container {
-  margin: 30px 0;
+  margin: 40px 0;
 }
 
 .custom-table-container h2 {
   color: #006d77;
-  font-size: 40px;
-margin-bottom: -5%;
+  font-size: 60px;
+  text-align: center;
+  /* text-shadow: #588d88; */
+  text-shadow: 5px  2px #588d88;
+/* margin-bottom: -5%; */
 }
 
-.addbtn button {
+/* .addbtn button {
   background-color: #83c5be !important;
   color: white !important;
   margin-left: 80% !important;
@@ -35,7 +38,7 @@ margin-bottom: -5%;
   background-color: #006d77 !important;
   color: #fff !important;
   transform: scale(1.05);
-}
+} */
 
 .table-heading {
   text-align: center;
