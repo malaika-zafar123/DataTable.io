@@ -88,3 +88,28 @@ margin-top: 1%;
  outline: none;
  box-shadow: none;
 }
+
+
+.pagination .page-link {
+  background-color: #006d77;  
+  color: #fff;
+  border: none;
+  margin: 0 3px;
+} 
+
+.pagination .page-link:hover {
+  background-color: #588d88;
+  color: #fff;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #04a796;
+  border: none;
+  color: #fff;
+}
+
+.pagination .page-item.disabled .page-link {
+  background-color: #707070;
+  color: #fcf7f7;
+  pointer-events: none;
+}
