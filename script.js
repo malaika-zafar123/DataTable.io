@@ -113,3 +113,36 @@ fetch('https://dummyjson.com/products')
   .catch(error => {
     console.error("Error fetching data:", error);
   });
+
+  // Add Product
+document.getElementById("productForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const newProduct = {
+    title: document.getElementById("title").value,
+    price: parseFloat(document.getElementById("price").value),
+    discountPercentage: parseFloat(document.getElementById("discount").value),
+    rating: parseFloat(document.getElementById("rating").value),
+    brand: document.getElementById("brand").value,
+    thumbnail: document.getElementById("thumbnail").value,
+    description: document.getElementById("description").value
+  };
+
+  fetch('https://dummyjson.com/products/add', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(newProduct)
+  })
+  .then(res => res.json())
+  .then(addedProduct => {
+
+    allProducts.unshift(addedProduct);
+    Table(allProducts);
+    buildPage(allProducts);
+
+    alert(" Product added successfully!");
+
+    document.getElementById("addProductForm").reset();
+  })
+  .catch(err => console.error("Error adding product:", err));
+});

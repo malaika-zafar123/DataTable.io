@@ -18,14 +18,13 @@ body {
   color: #006d77;
   font-size: 60px;
   text-align: center;
-  /* text-shadow: #588d88; */
   text-shadow: 5px  2px #588d88;
-/* margin-bottom: -5%; */
 }
 
-/* .addbtn button {
-  background-color: #83c5be !important;
+ .addbtn button {
+  background-color: #006d77 !important;
   color: white !important;
+ margin-top: -6% !important; 
   margin-left: 80% !important;
   padding: 10px;
   margin: 20px;
@@ -38,7 +37,7 @@ body {
   background-color: #006d77 !important;
   color: #fff !important;
   transform: scale(1.05);
-} */
+} 
 
 .table-heading {
   text-align: center;
