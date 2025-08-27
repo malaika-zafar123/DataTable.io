@@ -28,7 +28,7 @@
 
     <!--User Button-->
     <div class="addbtn">
-      <button class="btn" data-bs-toggle="modal" data-bs-target="#userModal">
+      <button id="addProductBtn" class="btn" data-bs-toggle="modal" data-bs-target="#productModal">
         <i class="bi bi-person-fill-add"></i> Add Products
       </button>
     </div>
@@ -57,11 +57,11 @@
       </tbody>
     </table>
     <!--Modal-->
-    <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content rounded-4 shadow">
           <div class="modal-header" style="background-color: #006d77;">
-            <h5 class="modal-title text-white" id="userModalLabel"><i class="bi bi-person-fill-add"></i> Add New User
+            <h5 class="modal-title text-white" id="productModalLabel"><i class="bi bi-person-fill-add"></i> Add New User
             </h5>
           </div>
           <div class="modal-body">

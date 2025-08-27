@@ -1,14 +1,11 @@
-<!-- Save as singleproduct.html -->
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Single Product</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <style>
     body {
       background-color: #fdfcfc;
@@ -28,59 +25,43 @@
       padding: 10px;
       border-radius: 5px;
     }
-   
+
     h4,
     strong {
       color: #006d77;
     }
-  
-    .text-center {
-      margin-bottom: 30px;
-    }
-  
+
     .btn2 {
-      margin: 20px 43%;
-      padding: 10px 10px;
+      margin: 20px auto;
+      display: block;
+      padding: 10px 20px;
       background-color: #006d77;
       border: none;
       border-radius: 5px !important;
+      text-align: center;
     }
-   
+
     .btn2 a {
       text-decoration: none;
       color: #fdfcfc !important;
     }
-  
-    .col-md-5 {
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 10px;
-    }
-   
+
     .product-container {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
     }
 
-    .carousel-inner {
-      background-color: rgb(241, 241, 241);
-      border-radius: 6px;
-      padding: 20px;
-      margin: 0 auto;
-     border-color: #006d77;
-    }
-   
-    #mainImage {
-      max-width: 100%;
-      width: 100%;
+    .carousel-inner img {
       max-height: 400px;
       object-fit: contain;
     }
-   
-    #thumbnail {
-      width: 40%;
+
+    .reviews-box {
+      margin-top: 30px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid #ddd;
     }
   </style>
 </head>
@@ -89,71 +70,44 @@
   <div class="container mt-5">
     <div class="product-container">
       <h2 id="title"></h2>
-     
       <p class="text-muted text-center" id="brand"></p>
       <p id="description" class="text-center"></p>
-     
-      <div class="text-center mb-3">
-        <img id="mainImage" class="img-fluid rounded mb-3" alt="Product Image" />
-        <br />
-        <img id="thumbnail" class="img-thumbnail mt-2" alt="Thumbnail" />
-      </div>
 
+      <!-- IMAGES CAROUSEL -->
+      <div class="mb-4" id="imageCarousel"></div>
+
+      <!-- PRODUCT DETAILS -->
       <div class="text-center">
         <h4 id="price" class="text-danger"></h4>
         <p>
-          <small id="discount" class="text-muted text-decoration-line-through"></small>
+          <small id="discount" class="text-muted"></small>
           <strong id="finalPrice"></strong>
         </p>
-        <p><strong>Stock:</strong> <span id="stock">Available</span></p>
-        <p><strong>Rating:</strong> <span id="rating">4.5</span></p>
-        <p><strong>Warranty:</strong> 6 months</p>
-        <p><strong>Shipping:</strong> Free delivery</p>
-        <p><strong>Return Policy:</strong> 7-day return</p>
+        <p><strong>Stock:</strong> <span id="stock"></span></p>
+        <p><strong>Rating:</strong> <span id="rating"></span></p>
+        <p><strong>Warranty:</strong> <span id="warranty"></span></p>
+        <p><strong>Shipping:</strong> <span id="shipping"></span></p>
+        <p><strong>Return Policy:</strong> <span id="returnPolicy"></span></p>
 
         <br>
-        <!-- QR Code -->
+        <!-- QR Code (sample static) -->
         <img src="https://cdn.dummyjson.com/public/qr-code.png" alt="QR Code" width="100" class="mt-3" />
         <br>
         <button class="btn mt-3">Add to Cart</button>
       </div>
     </div>
 
-    <!-- Customer Reviews -->
-
-    <h4 class="text-center w-100">Customer Reviews</h4>
-    <div id="carouselExample" class="carousel slide">
-      <div class="carousel-inner text-center">
-        <div class="carousel-item active">
-          <p><strong>Eleanor Collins</strong> ⭐⭐⭐</p>
-          <p>"Would not recommend!"</p>
-          <p><strong>Email:</strong> eleanor.collins@x.dummyjson.com</p>
-        </div>
-        <div class="carousel-item">
-          <p><strong>Lucas Gordon</strong> ⭐⭐⭐⭐</p>
-          <p>"Very satisfied!"</p>
-          <p><strong>Email:</strong> lucas.gordon@x.dummyjson.com</p>
-        </div>
-        <div class="carousel-item">
-          <p><strong>Scarlett Wright</strong> ⭐⭐⭐⭐⭐</p>
-          <p>"Highly impressed!"</p>
-          <p><strong>Email:</strong> scarlett.wright@x.dummyjson.com</p>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+    <!-- CUSTOMER REVIEWS -->
+    <div class="reviews-box">
+      <h4 class="text-center">Customer Reviews</h4>
+      <div id="reviewsCarousel"></div>
     </div>
   </div>
-  <button class="btn2 ">
+
+  <!-- Back to Table -->
+  <button class="btn2">
     <a href="index.html">Back to Table</a>
   </button>
-  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
     crossorigin="anonymous"></script>
