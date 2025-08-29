@@ -122,7 +122,7 @@ if(localData){
   });
 }
 
-// ➕ Add Product
+// Add Product
 document.getElementById("productForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
@@ -161,7 +161,7 @@ document.getElementById("productForm").addEventListener("submit", function(e) {
   .catch(err => console.error("Error adding product:", err));
 });
 
-// 🎯 Show modal on button click
+//  Show modal on button click
 document.getElementById("addProductBtn").addEventListener("click", () => {
   const modalElement = document.getElementById("productModal");
   const modal = new bootstrap.Modal(modalElement);
